@@ -15,7 +15,7 @@ body {
   transition: 0.4 ease-out;
 }
 
-.App.calor {
+.Appcalor {
   background-image: url(./assets/calor.jpeg);
 }
 main {
@@ -88,11 +88,4 @@ main {
   text-shadow: 3px 6px rgba(50,50,70,0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0,0,0,0.2);
-}
-
-.clima-box .clima {
-  color: #FFF;
-  font-size: 48px;
-  font-weight: 700;
-  text-shadow: 3px 3px rgba(50,50,70,0.5);
 }
