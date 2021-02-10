@@ -7,11 +7,11 @@ const api = {
 function App() {
 
   const [query, setQuery] = useState('')
-  const [weather, setWeather] = useState({})
+  const [clima, setclima] = useState({})
   const procurar = evt => {
     if (evt.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&APPID=${api.key}`).then(res => res.json()).then(result => {
-        setWeather(result)
+      fetch(`${api.base}clima?q=${query}&APPID=${api.key}`).then(resposta => resposta.json()).then(result => {
+        setclima(result)
         setQuery('');
       });
     }
@@ -30,20 +30,20 @@ function App() {
   }
   return (
     <div className={
-      (typeof weather.main != "undefined") ? (((weather.main.temp - 273.15) > 16) ? 'Appcalor' : 'App') :'App'}>
+      (typeof clima.main != "undefined") ? (((clima.main.temp - 273.15) > 16) ? 'Appcalor' : 'App') :'App'}>
       <main>
         <div className="search-box">
           <input type="text" className="search-bar" placeholder="Procurar..." onChange={e => setQuery(e.target.value)} onKeyPress={procurar} value={query}/>
         </div>
-        {(typeof weather.main != "undefined") ? (
+        {(typeof clima.main != "undefined") ? (
           <div>
             <div className="localizao-box">
-              <div className="localizacao">{weather.name}, {weather.sys.country}</div>
+              <div className="localizacao">{clima.name}, {clima.sys.country}</div>
               <div className="data">{dateBuilder(new Date())}</div>
             </div>
             <div className="clima-box">
               <div className="temperatura">
-               {Math.round(weather.main.temp - 273.15)}°c
+               {Math.round(clima.main.temp - 273.15)}°c
               </div>
            </div>
           </div>
