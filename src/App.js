@@ -10,12 +10,9 @@ function App() {
   const [weather, setWeather] = useState({})
   const procurar = evt => {
     if (evt.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&APPID=${api.key}`)
-      .then(res => res.json())
-      .then(result => {
+      fetch(`${api.base}weather?q=${query}&APPID=${api.key}`).then(res => res.json()).then(result => {
         setWeather(result)
         setQuery('');
-        console.log(weather)
       });
     }
   }
@@ -29,21 +26,14 @@ function App() {
     let mes = meses[d.getMonth()];
     let ano = d.getFullYear();
 
-    return `${dia} ${data} ${mes} ${ano}`
+    return `${dia}, ${data} de ${mes} de ${ano}`
   }
   return (
     <div className={
       (typeof weather.main != "undefined") ? (((weather.main.temp - 273.15) > 16) ? 'Appcalor' : 'App') :'App'}>
       <main>
         <div className="search-box">
-          <input 
-            type="text"
-            className="search-bar"
-            placeholder="Procurar..."
-            onChange={e => setQuery(e.target.value)}
-            onKeyPress={procurar}
-            value={query}
-          />
+          <input type="text" className="search-bar" placeholder="Procurar..." onChange={e => setQuery(e.target.value)} onKeyPress={procurar} value={query}/>
         </div>
         {(typeof weather.main != "undefined") ? (
           <div>

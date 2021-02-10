@@ -18,74 +18,78 @@ body {
 .Appcalor {
   background-image: url(./assets/calor.jpeg);
 }
+
 main {
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
   padding: 25px;
 }
 
-.search-box {
-  width: 100%;
-  margin: 0 0 75px;
-}
 
 .search-box .search-bar {
-  display: block;
-  width: 100%;
-  padding: 15px;
-
+  position: absolute;
+  width: 368px;
+  height: 55px;
+  left: 21px;
+  top: 191px;
+  
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
+  border-radius: 50px;
   appearance: none;
-  background: none;
+  background: #FFF;
   border: none;
   outline: none;
-
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 0px 0px 16px 16px;
-  margin-top: -25px;
-  
-  box-shadow: 0px 5px rgba(0,0,0,0.2);
-  color: #313131;
-  font-size: 20px;
-  transition: 0.4s ease;
-
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
 }
 
-.search-box .search-bar:focus {
-  background-color: rgba(255,255,255,0.75);
+.temperatura {
+  position: absolute;
+  width: 169px;
+  height: 85px;
+  left: 23px;
+  top: 415px;
+
+  font-style: normal;
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 85px;
+
+  color: #FFFFFF;
+}
+
+.localizao-box{
+  position: absolute;
+  width: 368px;
+  height: 128px;
+  left: 23px;
+  top: 500px;
+
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 .localizao-box .localizacao {
-  color: #FFF;
-  font-size: 32px;
-  font-weight: 300;
-  font-style: italic;
-  text-align: center;
-  text-shadow: 2px 2px rgba(50,50,70,0.5);
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  color: #FFFFFF;
+  margin-left: 65px;
+  margin-top: 10px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .localizao-box .data {
-  color: #FFF;
+
+  font-style: normal;
+  font-weight: normal;
   font-size: 20px;
-  font-weight: 300;
-  font-style: italic;
-  text-align: center;
-  text-shadow: 2px 2px rgba(50,50,70,0.5)
-}
-
-.clima-box {
-  text-align: center;
-}
-
-.clima-box .temperatura {
-  position: relative;
-  display: inline-block;
-  margin: 30px auto;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  padding: 15px 25px;
-  color: #FFF;
-  font-size: 102px;
-  font-weight: 900;
-  text-shadow: 3px 6px rgba(50,50,70,0.5);
-  text-align: center;
-  box-shadow: 3px 6px rgba(0,0,0,0.2);
+  /* line-height: 29px; */
+  color: #FFFFFF;
+  margin-top: 60px;
+  margin-left: 30px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
